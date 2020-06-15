@@ -1,0 +1,16 @@
+import registroProduccion.*
+
+test "registroProduccion" {
+	registroProduccion.cambiarProduccionPorDia([43,18,49,62,33,39])
+	assert.that(registroProduccion.algunDiaSeProdujo(49))
+	assert.notThat(registroProduccion.algunDiaSeProdujo(52))
+	assert.equals(62,registroProduccion.maximoValorDeProduccion())
+	assert.equals([18,62],registroProduccion.valoresDeProduccionPares())
+	assert.that(registroProduccion.produccionEsAcotada(10,100))
+	assert.notThat(registroProduccion.produccionEsAcotada(20,100))
+	assert.equals([43,49,62,39], registroProduccion.produccionesSuperioresA(35))
+	assert.equals([48,23,54,67,38,44],registroProduccion.produccionesSumando(5))
+	assert.equals(244,registroProduccion.totalProducido())
+	assert.equals(39, registroProduccion.ultimoValorDeProduccion())
+	assert.equals(2, registroProduccion.cantidadProduccionesMayorALaPrimera())
+}
